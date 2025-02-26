@@ -53,7 +53,7 @@
         "corrB": 0.2
       },
       "description": "Scatterplot Comparison - Trial 0",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.1&corrB=0.2",
       "response": [
         {
@@ -82,7 +82,7 @@
         "corrB": 0.6
       },
       "description": "Scatterplot Comparison - Trial 1",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.5&corrB=0.6",
       "response": [
         {
@@ -111,7 +111,7 @@
         "corrB": 0.5
       },
       "description": "Scatterplot Comparison - Trial 2",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.4&corrB=0.5",
       "response": [
         {
@@ -140,7 +140,7 @@
         "corrB": 0.3
       },
       "description": "Scatterplot Comparison - Trial 3",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.2&corrB=0.3",
       "response": [
         {
@@ -169,7 +169,7 @@
         "corrB": 0.6
       },
       "description": "Scatterplot Comparison - Trial 4",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.7&corrB=0.6",
       "response": [
         {
@@ -198,7 +198,7 @@
         "corrB": 0.9
       },
       "description": "Scatterplot Comparison - Trial 5",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.8&corrB=0.9",
       "response": [
         {
@@ -227,7 +227,7 @@
         "corrB": 0.7
       },
       "description": "Scatterplot Comparison - Trial 6",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.8&corrB=0.7",
       "response": [
         {
@@ -256,7 +256,7 @@
         "corrB": 0.7
       },
       "description": "Scatterplot Comparison - Trial 7",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.6&corrB=0.7",
       "response": [
         {
@@ -285,7 +285,7 @@
         "corrB": 0.5
       },
       "description": "Scatterplot Comparison - Trial 8",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.4&corrB=0.5",
       "response": [
         {
@@ -314,7 +314,7 @@
         "corrB": 0.3
       },
       "description": "Scatterplot Comparison - Trial 9",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.4&corrB=0.3",
       "response": [
         {
@@ -344,7 +344,7 @@
         "corrB": 0.6
       },
       "description": "Bubble Plot Comparison - Trial 0",
-      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y  between X and Y variables.",
       "path": "a3-study/assets/bubble-comparison.html?corrA=0.5&corrB=0.6",
       "response": [
         {
@@ -373,7 +373,7 @@
         "corrB": 0.7
       },
       "description": "Bubble Plot Comparison - Trial 1",
-      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y  between X and Y variables.",
       "path": "a3-study/assets/bubble-comparison.html?corrA=0.8&corrB=0.7",
       "response": [
         {
@@ -402,7 +402,7 @@
         "corrB": 0.3
       },
       "description": "Bubble Plot Comparison - Trial 2",
-      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y  between X and Y variables.",
       "path": "a3-study/assets/bubble-comparison.html?corrA=0.2&corrB=0.3",
       "response": [
         {
@@ -431,7 +431,7 @@
         "corrB": 0.5
       },
       "description": "Bubble Plot Comparison - Trial 3",
-      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y  between X and Y variables.",
       "path": "a3-study/assets/bubble-comparison.html?corrA=0.4&corrB=0.5",
       "response": [
         {
@@ -460,7 +460,7 @@
         "corrB": 0.3
       },
       "description": "Bubble Plot Comparison - Trial 4",
-      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y  between X and Y variables.",
       "path": "a3-study/assets/bubble-comparison.html?corrA=0.4&corrB=0.3",
       "response": [
         {
@@ -489,7 +489,7 @@
         "corrB": 0.6
       },
       "description": "Bubble Plot Comparison - Trial 5",
-      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y  between X and Y variables.",
       "path": "a3-study/assets/bubble-comparison.html?corrA=0.7&corrB=0.6",
       "response": [
         {
@@ -518,7 +518,7 @@
         "corrB": 0.9
       },
       "description": "Bubble Plot Comparison - Trial 6",
-      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y  between X and Y variables.",
       "path": "a3-study/assets/bubble-comparison.html?corrA=0.8&corrB=0.9",
       "response": [
         {
@@ -547,7 +547,7 @@
         "corrB": 0.5
       },
       "description": "Bubble Plot Comparison - Trial 7",
-      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y  between X and Y variables.",
       "path": "a3-study/assets/bubble-comparison.html?corrA=0.4&corrB=0.5",
       "response": [
         {
@@ -576,7 +576,7 @@
         "corrB": 0.7
       },
       "description": "Bubble Plot Comparison - Trial 8",
-      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y  between X and Y variables.",
       "path": "a3-study/assets/bubble-comparison.html?corrA=0.6&corrB=0.7",
       "response": [
         {
@@ -605,7 +605,7 @@
         "corrB": 0.2
       },
       "description": "Bubble Plot Comparison - Trial 9",
-      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y  between X and Y variables.",
       "path": "a3-study/assets/bubble-comparison.html?corrA=0.1&corrB=0.2",
       "response": [
         {
@@ -635,7 +635,7 @@
         "corrB": 0.2
       },
       "description": "Heatmap Comparison - Trial 0",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/heatmap-comparison.html?corrA=0.1&corrB=0.2",
       "response": [
         {
@@ -664,7 +664,7 @@
         "corrB": 0.6
       },
       "description": "Heatmap Comparison - Trial 1",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/heatmap-comparison.html?corrA=0.5&corrB=0.6",
       "response": [
         {
@@ -693,7 +693,7 @@
         "corrB": 0.7
       },
       "description": "Heatmap Comparison - Trial 2",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/heatmap-comparison.html?corrA=0.8&corrB=0.7",
       "response": [
         {
@@ -722,7 +722,7 @@
         "corrB": 0.5
       },
       "description": "Heatmap Comparison - Trial 3",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/heatmap-comparison.html?corrA=0.4&corrB=0.5",
       "response": [
         {
@@ -751,7 +751,7 @@
         "corrB": 0.5
       },
       "description": "Heatmap Comparison - Trial 4",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/heatmap-comparison.html?corrA=0.4&corrB=0.5",
       "response": [
         {
@@ -780,7 +780,7 @@
         "corrB": 0.3
       },
       "description": "Heatmap Comparison - Trial 5",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/heatmap-comparison.html?corrA=0.4&corrB=0.3",
       "response": [
         {
@@ -809,7 +809,7 @@
         "corrB": 0.9
       },
       "description": "Heatmap Comparison - Trial 6",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/heatmap-comparison.html?corrA=0.8&corrB=0.9",
       "response": [
         {
@@ -838,7 +838,7 @@
         "corrB": 0.3
       },
       "description": "Heatmap Comparison - Trial 7",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/heatmap-comparison.html?corrA=0.2&corrB=0.3",
       "response": [
         {
@@ -867,7 +867,7 @@
         "corrB": 0.6
       },
       "description": "Heatmap Comparison - Trial 8",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/heatmap-comparison.html?corrA=0.7&corrB=0.6",
       "response": [
         {
@@ -896,7 +896,7 @@
         "corrB": 0.7
       },
       "description": "Heatmap Comparison - Trial 9",
-      "instruction": "Select the visualization that shows a stronger relationship.",
+      "instruction": "Type '1' or '2' in the box below to specify which visualization shows a stronger relationship between X and Y .",
       "path": "a3-study/assets/heatmap-comparison.html?corrA=0.6&corrB=0.7",
       "response": [
         {
