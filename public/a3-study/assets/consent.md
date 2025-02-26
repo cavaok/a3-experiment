@@ -6,28 +6,27 @@ This is a consent form. Please read it carefully and click the "I agree" button 
 
 ## Purpose of the Study
 
-The purpose of this study is to demonstrate how to build a study using ReVISit. The study is designed to be simple and easy to build, and it is intended to be used as a starting point for building more complex studies.
+The purpose of this study is to examine participants abilities to accurately percieve relationships given different visualization types.
 
 ## Procedures
 
-You will be presented with a series of images. For each image, you will be asked to rate it on a scale from 1 to 5. You will also be asked to provide some demographic information.
+You will be presented with a series of visualizations. For each trial, you will be asked to choose which one has a stronger relationship between the X and Y variables.
 
 ## Risks and Benefits
 
-There are no known risks associated with participating in this study. The benefits of participating in this study include gaining experience with ReVISit and learning how to build a study.
+There are no known risks associated with participating in this study. The benefits of participating in this study include gaining experience with ReVISit and helping me graduate in May.
 
 ## Confidentiality
 
-Your responses will be kept confidential. Your data will be stored securely and will only be accessible to the researchers involved in this study.
+Your responses will be kept confidential. Your collected data will be stored securely and will only be accessible to the researchers involved in this study. The results gathered will not include your name, and will be calculated across all participant data.
 
 ## Voluntary Participation
 
-Your participation in this study is voluntary. You may choose to stop participating at any time without penalty.
+Your participation in this study is voluntary. You may choose to stop participating at any time.
 
 ## Contact Information
 
-If you have any questions about this study, please contact the researchers at example@example.com
-
+If you have any questions about this study, please contact me at okcava@wpi.edu!
 ---
 
 By clicking the "I agree" button below, you are indicating that you have read the consent form and agree to participate in this study.

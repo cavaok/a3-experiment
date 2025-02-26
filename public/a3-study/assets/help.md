@@ -1,3 +1,3 @@
 ## Help
 
-This is a help page.
+Reach out to me at okcava@wpi.edu with any questions.

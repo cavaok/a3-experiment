@@ -11,6 +11,9 @@ A stronger relationship means the variables are more closely connected and predi
 - In a **strong relationship**, points or data tend to follow a clear pattern (usually forming a line or curve)
 - In a **weak relationship**, points or data appear more scattered or random
 
+If you need a reminder of what a strong vs weak relationship looks like check out this demonstration from (Kristoffer Magnusson from R Psychologist)[https://rpsychologist.com/correlation/]
+![Demonstration of weak vs strong relationships](https://github.com/cavaok/a3-experiment/tree/main/public/a3-study/assets/correlation.gif)
+
 ## Visualization Types
 
 You'll encounter three types of visualizations:
@@ -35,13 +38,13 @@ You'll encounter three types of visualizations:
 For each trial:
 
 1. **Examine both visualizations** carefully
-2. **Click on the visualization** that you believe shows the stronger relationship between variables
-3. **Rate your confidence** in your selection on the following screen
+2. **Type which visualization (1 or 2)** in the sidebar that you believe shows the stronger relationship between variables
+3. **Rate your confidence (1 through 5)** in your choice using the sidebar on the following screen
 
 ## Tips
 
-- Trust your visual perception
-- Don't spend too long on each question – your initial impression is valuable
-- There is no time limit, but the experiment typically takes 10-15 minutes to complete
+- Trust your visual perception!
+- Don't spend too long on each question because your initial impression is valuable
+- There is no time limit, but the experiment typically takes 5-10 minutes to complete
 
-If you're ready to begin, click "Next" to start with the visualization tasks.
+If you're ready to begin, click "Next"!
