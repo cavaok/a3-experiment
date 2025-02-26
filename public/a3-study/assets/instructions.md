@@ -11,8 +11,7 @@ A stronger relationship means the variables are more closely connected and predi
 - In a **strong relationship**, points or data tend to follow a clear pattern (usually forming a line or curve)
 - In a **weak relationship**, points or data appear more scattered or random
 
-If you need a reminder of what a strong vs weak relationship looks like check out this demonstration from (Kristoffer Magnusson from R Psychologist)[https://rpsychologist.com/correlation/]
-![Demonstration of weak vs strong relationships](https://github.com/cavaok/a3-experiment/tree/main/public/a3-study/assets/correlation.gif)
+If you need a reminder of what a strong vs weak relationship looks like check out this demonstration from [Kristoffer Magnusson from R Psychologist](https://rpsychologist.com/correlation/)
 
 ## Visualization Types
 
