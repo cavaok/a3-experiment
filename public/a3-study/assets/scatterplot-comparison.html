@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Correlation Comparison - Scatterplots</title>
+    <script src="https://d3js.org/d3.v7.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        .visualization {
+            position: relative;
+            cursor: pointer;
+            border: 3px solid transparent;
+            border-radius: 8px;
+            padding: 10px;
+            transition: border-color 0.2s;
+        }
+        .visualization:hover {
+            border-color: #aaa;
+        }
+        .visualization.selected {
+            border-color: #4682b4;
+        }
+        .vis-label {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .axis-label {
+            font-size: 12px;
+            text-anchor: middle;
+        }
+        .instruction {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        #selection-info {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="instruction">Select the visualization that shows a <strong>stronger relationship</strong> between variables</div>
+    
+    <div class="container">
+        <div class="visualization" id="vis-a">
+            <div class="vis-label">Visualization A</div>
+            <svg id="scatter-a"></svg>
+        </div>
+        
+        <div class="visualization" id="vis-b">
+            <div class="vis-label">Visualization B</div>
+            <svg id="scatter-b"></svg>
+        </div>
+    </div>
+    
+    <div id="selection-info"></div>
+
+    <script>
+        // Configuration
+        const width = 400;
+        const height = 400;
+        const padding = 50;
+        const pointCount = 80;
+        
+        // Function to parse URL parameters
+        function getURLParams() {
+            const params = {};
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            
+            // Get correlation values from URL parameters if they exist
+            if (urlParams.has('corrA')) {
+                params.corrA = parseFloat(urlParams.get('corrA'));
+            }
+            if (urlParams.has('corrB')) {
+                params.corrB = parseFloat(urlParams.get('corrB'));
+            }
+            
+            return params;
+        }
+        
+        // Generate correlated data
+        function generateCorrelatedData(n, correlation) {
+            const result = [];
+            const mean = 0.5;
+            const stdDev = 0.15;
+            
+            for (let i = 0; i < n; i++) {
+                // Generate x as random uniform between 0 and 1
+                const x = Math.random();
+                
+                // Generate y with specified correlation to x
+                // Using a formula that creates correlated random variables
+                let y = mean + correlation * (x - mean) + 
+                      Math.sqrt(1 - correlation * correlation) * stdDev * (Math.random() * 2 - 1);
+                
+                // Ensure y is between 0 and 1
+                y = Math.max(0, Math.min(1, y));
+                
+                result.push({x, y});
+            }
+            
+            return result;
+        }
+        
+        // Create a scatterplot from data
+        function createScatterplot(svgId, data, correlation) {
+            const svg = d3.select(`#${svgId}`)
+                .attr("width", width)
+                .attr("height", height);
+                
+            // Clear previous content
+            svg.selectAll("*").remove();
+                
+            // Create scales
+            const xScale = d3.scaleLinear()
+                .domain([0, 1])
+                .range([padding, width - padding])
+                .nice();
+                
+            const yScale = d3.scaleLinear()
+                .domain([0, 1])
+                .range([height - padding, padding])
+                .nice();
+                
+            // Create axes
+            const xAxis = d3.axisBottom(xScale);
+            const yAxis = d3.axisLeft(yScale);
+            
+            svg.append("g")
+                .attr("transform", `translate(0, ${height - padding})`)
+                .call(xAxis);
+                
+            svg.append("g")
+                .attr("transform", `translate(${padding}, 0)`)
+                .call(yAxis);
+                
+            // Add axis labels
+            svg.append("text")
+                .attr("class", "axis-label")
+                .attr("x", width / 2)
+                .attr("y", height - 10)
+                .text("Variable X");
+                
+            svg.append("text")
+                .attr("class", "axis-label")
+                .attr("transform", "rotate(-90)")
+                .attr("x", -height / 2)
+                .attr("y", 15)
+                .text("Variable Y");
+                
+            // Plot points
+            svg.selectAll("circle")
+                .data(data)
+                .enter()
+                .append("circle")
+                .attr("cx", d => xScale(d.x))
+                .attr("cy", d => yScale(d.y))
+                .attr("r", 5)
+                .attr("fill", "#4682b4")
+                .attr("opacity", 0.7);
+                
+            // Store correlation in custom attribute
+            svg.attr("data-correlation", correlation);
+        }
+        
+        // Get correlation values
+        function getCorrelationValues() {
+            // Check for URL parameters
+            const params = getURLParams();
+            
+            // If URL parameters exist, use them
+            if (params.corrA !== undefined && params.corrB !== undefined) {
+                return [params.corrA, params.corrB];
+            }
+            
+            // Otherwise generate random values (for testing outside reVISit)
+            const minCorr = 0.1;
+            const maxCorr = 0.9;
+            
+            let corrA = minCorr + Math.random() * (maxCorr - minCorr);
+            let corrB = minCorr + Math.random() * (maxCorr - minCorr);
+            
+            // Ensure they're different enough
+            while (Math.abs(corrA - corrB) < 0.2) {
+                corrB = minCorr + Math.random() * (maxCorr - minCorr);
+            }
+            
+            return [corrA, corrB];
+        }
+        
+        // Initialize visualizations
+        function initializeVisualizations() {
+            // Get correlation values
+            const [corrA, corrB] = getCorrelationValues();
+            
+            // Generate data
+            const dataA = generateCorrelatedData(pointCount, corrA);
+            const dataB = generateCorrelatedData(pointCount, corrB);
+            
+            // Create visualizations
+            createScatterplot("scatter-a", dataA, corrA);
+            createScatterplot("scatter-b", dataB, corrB);
+            
+            // Store values for reference
+            window.corrA = corrA;
+            window.corrB = corrB;
+            
+            // Console output for debugging
+            console.log(`Correlation A: ${corrA.toFixed(2)}, Correlation B: ${corrB.toFixed(2)}`);
+        }
+        
+        // Handle visualization selection
+        function selectVisualization(visId) {
+            // Clear previous selection
+            d3.selectAll(".visualization").classed("selected", false);
+            
+            // Highlight selected
+            d3.select(`#${visId}`).classed("selected", true);
+            
+            // Get selected letter
+            const selectedLetter = visId === "vis-a" ? "A" : "B";
+            
+            // Update selection info
+            d3.select("#selection-info").text(`You selected Visualization ${selectedLetter}`);
+            
+            // Store selection for reVISit to read
+            window.selectedVisualization = selectedLetter;
+        }
+        
+        // Set up click handlers
+        d3.select("#vis-a").on("click", function() {
+            selectVisualization("vis-a");
+        });
+        
+        d3.select("#vis-b").on("click", function() {
+            selectVisualization("vis-b");
+        });
+        
+        // Initialize on load
+        initializeVisualizations();
+        
+        // Function for reVISit to get response
+        window.getResponse = function() {
+            // Convert letter selection to numerical value
+            // A = 1, B = 2
+            let numericalSelection = null;
+            if (window.selectedVisualization === "A") {
+                numericalSelection = 1;
+            } else if (window.selectedVisualization === "B") {
+                numericalSelection = 2;
+            }
+            
+            return numericalSelection;
+        };
+    </script>
+</body>
+</html>

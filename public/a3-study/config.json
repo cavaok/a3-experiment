@@ -1,0 +1,982 @@
+{
+  "$schema": "https://raw.githubusercontent.com/revisit-studies/study/v2.0.2/src/parser/StudyConfigSchema.json",
+  "studyMetadata": {
+    "title": "Relationship Perception Experiment",
+    "version": "development",
+    "authors": [
+      "Olivia Cava"
+    ],
+    "date": "2025-02-25",
+    "description": "Testing participants' ability to perceive relationships in different visualization types",
+    "organizations": [
+      "WPI"
+    ]
+  },
+  "uiConfig": {
+    "contactEmail": "okcava@wpi.edu",
+    "helpTextPath": "a3-study/assets/help.md",
+    "logoPath": "revisitAssets/revisitLogoSquare.svg",
+    "withProgressBar": true,
+    "autoDownloadStudy": false,
+    "sidebar": true
+  },
+  "components": {
+    "welcome": {
+      "type": "markdown",
+      "path": "a3-study/assets/welcome.md",
+      "response": []
+    },
+    "consent": {
+      "type": "markdown",
+      "path": "a3-study/assets/consent.md",
+      "response": [
+        {
+          "type": "shortText",
+          "id": "name",
+          "prompt": "Your signature"
+        }
+      ]
+    },
+    "instructions": {
+      "type": "markdown",
+      "path": "a3-study/assets/instructions.md",
+      "response": []
+    },
+    
+    "scatterplot0": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "scatterplot",
+        "trial": 0,
+        "corrA": 0.1,
+        "corrB": 0.2
+      },
+      "description": "Scatterplot Comparison - Trial 0",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.1&corrB=0.2",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "scatterplot1": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "scatterplot",
+        "trial": 1,
+        "corrA": 0.5,
+        "corrB": 0.6
+      },
+      "description": "Scatterplot Comparison - Trial 1",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.5&corrB=0.6",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "scatterplot2": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "scatterplot",
+        "trial": 2,
+        "corrA": 0.4,
+        "corrB": 0.5
+      },
+      "description": "Scatterplot Comparison - Trial 2",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.4&corrB=0.5",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "scatterplot3": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "scatterplot",
+        "trial": 3,
+        "corrA": 0.2,
+        "corrB": 0.3
+      },
+      "description": "Scatterplot Comparison - Trial 3",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.2&corrB=0.3",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "scatterplot4": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "scatterplot",
+        "trial": 4,
+        "corrA": 0.7,
+        "corrB": 0.6
+      },
+      "description": "Scatterplot Comparison - Trial 4",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.7&corrB=0.6",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 1
+        }
+      ]
+    },
+    "scatterplot5": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "scatterplot",
+        "trial": 5,
+        "corrA": 0.8,
+        "corrB": 0.9
+      },
+      "description": "Scatterplot Comparison - Trial 5",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.8&corrB=0.9",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "scatterplot6": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "scatterplot",
+        "trial": 6,
+        "corrA": 0.8,
+        "corrB": 0.7
+      },
+      "description": "Scatterplot Comparison - Trial 6",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.8&corrB=0.7",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 1
+        }
+      ]
+    },
+    "scatterplot7": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "scatterplot",
+        "trial": 7,
+        "corrA": 0.6,
+        "corrB": 0.7
+      },
+      "description": "Scatterplot Comparison - Trial 7",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.6&corrB=0.7",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "scatterplot8": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "scatterplot",
+        "trial": 8,
+        "corrA": 0.4,
+        "corrB": 0.5
+      },
+      "description": "Scatterplot Comparison - Trial 8",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.4&corrB=0.5",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "scatterplot9": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "scatterplot",
+        "trial": 9,
+        "corrA": 0.4,
+        "corrB": 0.3
+      },
+      "description": "Scatterplot Comparison - Trial 9",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/scatterplot-comparison.html?corrA=0.4&corrB=0.3",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 1
+        }
+      ]
+    },
+    
+    "bubbleplot0": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "bubble",
+        "trial": 0,
+        "corrA": 0.5,
+        "corrB": 0.6
+      },
+      "description": "Bubble Plot Comparison - Trial 0",
+      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "path": "a3-study/assets/bubble-comparison.html?corrA=0.5&corrB=0.6",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "bubbleplot1": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "bubble",
+        "trial": 1,
+        "corrA": 0.8,
+        "corrB": 0.7
+      },
+      "description": "Bubble Plot Comparison - Trial 1",
+      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "path": "a3-study/assets/bubble-comparison.html?corrA=0.8&corrB=0.7",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 1
+        }
+      ]
+    },
+    "bubbleplot2": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "bubble",
+        "trial": 2,
+        "corrA": 0.2,
+        "corrB": 0.3
+      },
+      "description": "Bubble Plot Comparison - Trial 2",
+      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "path": "a3-study/assets/bubble-comparison.html?corrA=0.2&corrB=0.3",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "bubbleplot3": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "bubble",
+        "trial": 3,
+        "corrA": 0.4,
+        "corrB": 0.5
+      },
+      "description": "Bubble Plot Comparison - Trial 3",
+      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "path": "a3-study/assets/bubble-comparison.html?corrA=0.4&corrB=0.5",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "bubbleplot4": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "bubble",
+        "trial": 4,
+        "corrA": 0.4,
+        "corrB": 0.3
+      },
+      "description": "Bubble Plot Comparison - Trial 4",
+      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "path": "a3-study/assets/bubble-comparison.html?corrA=0.4&corrB=0.3",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 1
+        }
+      ]
+    },
+    "bubbleplot5": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "bubble",
+        "trial": 5,
+        "corrA": 0.7,
+        "corrB": 0.6
+      },
+      "description": "Bubble Plot Comparison - Trial 5",
+      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "path": "a3-study/assets/bubble-comparison.html?corrA=0.7&corrB=0.6",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 1
+        }
+      ]
+    },
+    "bubbleplot6": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "bubble",
+        "trial": 6,
+        "corrA": 0.8,
+        "corrB": 0.9
+      },
+      "description": "Bubble Plot Comparison - Trial 6",
+      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "path": "a3-study/assets/bubble-comparison.html?corrA=0.8&corrB=0.9",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "bubbleplot7": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "bubble",
+        "trial": 7,
+        "corrA": 0.4,
+        "corrB": 0.5
+      },
+      "description": "Bubble Plot Comparison - Trial 7",
+      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "path": "a3-study/assets/bubble-comparison.html?corrA=0.4&corrB=0.5",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "bubbleplot8": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "bubble",
+        "trial": 8,
+        "corrA": 0.6,
+        "corrB": 0.7
+      },
+      "description": "Bubble Plot Comparison - Trial 8",
+      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "path": "a3-study/assets/bubble-comparison.html?corrA=0.6&corrB=0.7",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "bubbleplot9": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "bubble",
+        "trial": 9,
+        "corrA": 0.1,
+        "corrB": 0.2
+      },
+      "description": "Bubble Plot Comparison - Trial 9",
+      "instruction": "Select the visualization that shows a stronger relationship between X and Y variables.",
+      "path": "a3-study/assets/bubble-comparison.html?corrA=0.1&corrB=0.2",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    
+    "heatmap0": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "heatmap",
+        "trial": 0,
+        "corrA": 0.1,
+        "corrB": 0.2
+      },
+      "description": "Heatmap Comparison - Trial 0",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/heatmap-comparison.html?corrA=0.1&corrB=0.2",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "heatmap1": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "heatmap",
+        "trial": 1,
+        "corrA": 0.5,
+        "corrB": 0.6
+      },
+      "description": "Heatmap Comparison - Trial 1",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/heatmap-comparison.html?corrA=0.5&corrB=0.6",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "heatmap2": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "heatmap",
+        "trial": 2,
+        "corrA": 0.8,
+        "corrB": 0.7
+      },
+      "description": "Heatmap Comparison - Trial 2",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/heatmap-comparison.html?corrA=0.8&corrB=0.7",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 1
+        }
+      ]
+    },
+    "heatmap3": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "heatmap",
+        "trial": 3,
+        "corrA": 0.4,
+        "corrB": 0.5
+      },
+      "description": "Heatmap Comparison - Trial 3",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/heatmap-comparison.html?corrA=0.4&corrB=0.5",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "heatmap4": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "heatmap",
+        "trial": 4,
+        "corrA": 0.4,
+        "corrB": 0.5
+      },
+      "description": "Heatmap Comparison - Trial 4",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/heatmap-comparison.html?corrA=0.4&corrB=0.5",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "heatmap5": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "heatmap",
+        "trial": 5,
+        "corrA": 0.4,
+        "corrB": 0.3
+      },
+      "description": "Heatmap Comparison - Trial 5",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/heatmap-comparison.html?corrA=0.4&corrB=0.3",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 1
+        }
+      ]
+    },
+    "heatmap6": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "heatmap",
+        "trial": 6,
+        "corrA": 0.8,
+        "corrB": 0.9
+      },
+      "description": "Heatmap Comparison - Trial 6",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/heatmap-comparison.html?corrA=0.8&corrB=0.9",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "heatmap7": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "heatmap",
+        "trial": 7,
+        "corrA": 0.2,
+        "corrB": 0.3
+      },
+      "description": "Heatmap Comparison - Trial 7",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/heatmap-comparison.html?corrA=0.2&corrB=0.3",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    "heatmap8": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "heatmap",
+        "trial": 8,
+        "corrA": 0.7,
+        "corrB": 0.6
+      },
+      "description": "Heatmap Comparison - Trial 8",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/heatmap-comparison.html?corrA=0.7&corrB=0.6",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 1
+        }
+      ]
+    },
+    "heatmap9": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "meta": {
+        "type": "heatmap",
+        "trial": 9,
+        "corrA": 0.6,
+        "corrB": 0.7
+      },
+      "description": "Heatmap Comparison - Trial 9",
+      "instruction": "Select the visualization that shows a stronger relationship.",
+      "path": "a3-study/assets/heatmap-comparison.html?corrA=0.6&corrB=0.7",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "correctAnswer": [
+        {
+          "id": "selection",
+          "answer": 2
+        }
+      ]
+    },
+    
+    "confidence-rating": {
+      "type": "website",
+      "nextButtonLocation": "sidebar",
+      "description": "Confidence rating",
+      "instruction": "How confident are you in your answer?",
+      "path": "a3-study/assets/confidence-rating.html",
+      "response": [
+        {
+          "id": "selection",
+          "prompt": "Your selection:",
+          "location": "sidebar",
+          "type": "numerical",
+          "min": 1,
+          "max": 5
+        }
+      ]
+    },
+    
+    "conclusion": {
+      "type": "markdown",
+      "path": "a3-study/assets/conclusion.md",
+      "response": []
+    }
+  },
+  "sequence": {
+    "order": "fixed",
+    "components": [
+      "welcome", 
+      "consent", 
+      "instructions", 
+      "bubbleplot0", "confidence-rating",
+      "scatterplot1", "confidence-rating",
+      "bubbleplot2", "confidence-rating",
+      "heatmap4", "confidence-rating",
+      "bubbleplot6", "confidence-rating",
+      "heatmap5", "confidence-rating",
+      "scatterplot7", "confidence-rating",
+      "bubbleplot7", "confidence-rating",
+      "scatterplot9", "confidence-rating",
+      "heatmap6", "confidence-rating",
+      "bubbleplot3", "confidence-rating",
+      "scatterplot8", "confidence-rating",
+      "heatmap0", "confidence-rating",
+      "scatterplot3", "confidence-rating",
+      "heatmap3", "confidence-rating",
+      "bubbleplot8", "confidence-rating",
+      "heatmap8", "confidence-rating",
+      "scatterplot0", "confidence-rating",
+      "bubbleplot9", "confidence-rating",
+      "heatmap9", "confidence-rating",      
+      "scatterplot5", "confidence-rating",
+      "bubbleplot4", "confidence-rating",
+      "scatterplot4", "confidence-rating",
+      "heatmap7", "confidence-rating",
+      "bubbleplot5", "confidence-rating",
+      "scatterplot6", "confidence-rating",
+      "heatmap2", "confidence-rating",
+      "scatterplot2", "confidence-rating",
+      "heatmap1", "confidence-rating",
+      "bubbleplot1", "confidence-rating",
+      "conclusion"
+    ]
+  }
+}
