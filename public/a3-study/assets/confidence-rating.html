@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Confidence Rating</title>
+    <title>Confidence Rating (Static)</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,7 +27,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            cursor: pointer;
         }
         .rating-button {
             width: 40px;
@@ -39,16 +38,6 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 10px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .rating-button:hover {
-            border-color: #4682b4;
-        }
-        .rating-button.selected {
-            background-color: #4682b4;
-            border-color: #4682b4;
-            color: white;
         }
         .rating-label {
             font-size: 14px;
@@ -71,54 +60,27 @@
         <div class="question">How confident are you in your answer?</div>
         
         <div class="rating-container">
-            <div class="rating-option" onclick="selectRating(1)">
+            <div class="rating-option">
                 <div class="rating-button" id="rating-1">1</div>
                 <div class="rating-label">Not at all confident</div>
             </div>
-            <div class="rating-option" onclick="selectRating(2)">
+            <div class="rating-option">
                 <div class="rating-button" id="rating-2">2</div>
                 <div class="rating-label"></div>
             </div>
-            <div class="rating-option" onclick="selectRating(3)">
+            <div class="rating-option">
                 <div class="rating-button" id="rating-3">3</div>
                 <div class="rating-label">Somewhat confident</div>
             </div>
-            <div class="rating-option" onclick="selectRating(4)">
+            <div class="rating-option">
                 <div class="rating-button" id="rating-4">4</div>
                 <div class="rating-label"></div>
             </div>
-            <div class="rating-option" onclick="selectRating(5)">
+            <div class="rating-option">
                 <div class="rating-button" id="rating-5">5</div>
                 <div class="rating-label">Very confident</div>
             </div>
         </div>
     </div>
-
-    <script>
-        let selectedRating = null;
-        
-        function selectRating(rating) {
-            // Clear previous selection
-            for (let i = 1; i <= 5; i++) {
-                document.getElementById(`rating-${i}`).classList.remove('selected');
-            }
-            
-            // Highlight new selection
-            document.getElementById(`rating-${rating}`).classList.add('selected');
-            
-            // Store selection
-            selectedRating = rating;
-            
-            // Debug log
-            console.log(`Selected confidence rating: ${rating}`);
-        }
-        
-        // Function for reVISit to get response
-        window.getResponse = function() {
-            return {
-                "confidence": selectedRating
-            };
-        };
-    </script>
 </body>
 </html>

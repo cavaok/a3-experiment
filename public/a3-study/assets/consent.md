@@ -24,9 +24,7 @@ Your responses will be kept confidential. Your collected data will be stored sec
 
 Your participation in this study is voluntary. You may choose to stop participating at any time.
 
-## Contact Information
-
-If you have any questions about this study, please contact me at okcava@wpi.edu!
+### If you have any questions about this study, contact okcava@wpi.edu!
 ---
 
 By clicking the "I agree" button below, you are indicating that you have read the consent form and agree to participate in this study.

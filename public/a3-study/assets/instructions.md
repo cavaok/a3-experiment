@@ -4,13 +4,6 @@
 
 In this experiment, you will be shown pairs of visualizations side by side. Your task is to select the visualization that shows a **stronger relationship** between variables.
 
-## What is a "Stronger Relationship"?
-
-A stronger relationship means the variables are more closely connected and predictable from one another. Visually:
-
-- In a **strong relationship**, points or data tend to follow a clear pattern (usually forming a line or curve)
-- In a **weak relationship**, points or data appear more scattered or random
-
 If you need a reminder of what a strong vs weak relationship looks like check out this demonstration by [Kristoffer Magnusson from R Psychologist](https://rpsychologist.com/correlation/)
 
 ## Visualization Types
@@ -42,7 +35,7 @@ For each trial:
 
 ## Tips
 
-- Trust your visual perception!
+- Trust your visual perception gut!
 - Don't spend too long on each question because your initial impression is valuable
 - There is no time limit, but the experiment typically takes 5-10 minutes to complete
 
