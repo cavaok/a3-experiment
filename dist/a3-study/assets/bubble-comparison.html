@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Correlation Comparison - Bubble Scatterplots (Static)</title>
+    <script src="https://d3js.org/d3.v7.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        .visualization {
+            position: relative;
+            border: 3px solid transparent;
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .vis-label {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .axis-label {
+            font-size: 12px;
+            text-anchor: middle;
+        }
+        .instruction {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        #selection-info {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            height: 20px;
+        }
+        .legend {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .legend-item {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        .legend-circle {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .legend-label {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="instruction">Which visualization (1 or 2) shows a <strong>stronger relationship</strong> between X and Y?</div>
+    
+    <div class="container">
+        <div class="visualization" id="vis-a">
+            <div class="vis-label">Visualization 1</div>
+            <svg id="bubble-a"></svg>
+            <div id="legend-a" class="legend"></div>
+        </div>
+        
+        <div class="visualization" id="vis-b">
+            <div class="vis-label">Visualization 2</div>
+            <svg id="bubble-b"></svg>
+            <div id="legend-b" class="legend"></div>
+        </div>
+    </div>
+    
+    <div id="selection-info"></div>
+
+    <script>
+        const width = 400;
+        const height = 400;
+        const padding = 50;
+        const pointCount = 60;
+        
+        // Function to parse URL parameters
+        function getURLParams() {
+            const params = {};
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            if (urlParams.has('corrA')) {
+                params.corrXYA = parseFloat(urlParams.get('corrA'));
+            }
+            if (urlParams.has('corrB')) {
+                params.corrXYB = parseFloat(urlParams.get('corrB'));
+            }
+            if (urlParams.has('corrXZA')) {
+                params.corrXZA = parseFloat(urlParams.get('corrXZA'));
+            } else {
+                params.corrXZA = 0.15; 
+            } 
+            if (urlParams.has('corrXZB')) {
+                params.corrXZB = parseFloat(urlParams.get('corrXZB'));
+            } else {
+                params.corrXZB = 0.15; 
+            }
+            return params;
+        }
+        
+        // Generate correlated data with third variable
+        function generateCorrelatedDataWithSize(n, correlationXY, correlationXZ = 0) {
+            const result = [];
+            const mean = 0.5;
+            const stdDev = 0.15;
+            
+            for (let i = 0; i < n; i++) {
+                const x = Math.random();
+                let y = mean + correlationXY * (x - mean) + 
+                      Math.sqrt(1 - correlationXY * correlationXY) * stdDev * (Math.random() * 2 - 1);
+                let z = mean + correlationXZ * (x - mean) + 
+                      Math.sqrt(1 - correlationXZ * correlationXZ) * stdDev * (Math.random() * 2 - 1);
+
+                y = Math.max(0, Math.min(1, y));
+                z = Math.max(0, Math.min(1, z));
+                
+                result.push({x, y, z});
+            }
+            
+            return result;
+        }
+        
+        // Create a bubble scatterplot from data
+        function createBubblePlot(svgId, legendId, data, correlationXY, correlationXZ) {
+            const svg = d3.select(`#${svgId}`)
+                .attr("width", width)
+                .attr("height", height);
+                
+            svg.selectAll("*").remove();
+
+            const xScale = d3.scaleLinear()
+                .domain([0, 1])
+                .range([padding, width - padding])
+                .nice();
+                
+            const yScale = d3.scaleLinear()
+                .domain([0, 1])
+                .range([height - padding, padding])
+                .nice();
+                
+            const sizeScale = d3.scaleLinear()
+                .domain([0, 1])
+                .range([3, 15]);
+                
+            const xAxis = d3.axisBottom(xScale);
+            const yAxis = d3.axisLeft(yScale);
+            
+            svg.append("g")
+                .attr("transform", `translate(0, ${height - padding})`)
+                .call(xAxis);
+                
+            svg.append("g")
+                .attr("transform", `translate(${padding}, 0)`)
+                .call(yAxis);
+                
+            svg.append("text")
+                .attr("class", "axis-label")
+                .attr("x", width / 2)
+                .attr("y", height - 10)
+                .text("Variable X");
+                
+            svg.append("text")
+                .attr("class", "axis-label")
+                .attr("transform", "rotate(-90)")
+                .attr("x", -height / 2)
+                .attr("y", 15)
+                .text("Variable Y");
+
+            svg.selectAll("circle")
+                .data(data)
+                .enter()
+                .append("circle")
+                .attr("cx", d => xScale(d.x))
+                .attr("cy", d => yScale(d.y))
+                .attr("r", d => sizeScale(d.z))
+                .attr("fill", "#4682b4")
+                .attr("opacity", 0.7);
+
+            const legend = d3.select(`#${legendId}`);
+            legend.html(""); 
+
+            legend.append("div")
+                .text("Circle size represents Variable Z")
+                .style("font-size", "12px")
+                .style("margin-bottom", "5px");
+
+            const legendSizes = [0.2, 0.5, 0.8];
+            legendSizes.forEach(size => {
+                const legendItem = legend.append("div")
+                    .attr("class", "legend-item");
+                    
+                legendItem.append("svg")
+                    .attr("class", "legend-circle")
+                    .attr("width", 20)
+                    .attr("height", 20)
+                    .append("circle")
+                    .attr("cx", 10)
+                    .attr("cy", 10)
+                    .attr("r", sizeScale(size))
+                    .attr("fill", "#4682b4")
+                    .attr("opacity", 0.7);
+                    
+                legendItem.append("span")
+                    .attr("class", "legend-label")
+                    .text(size.toFixed(1));
+            });
+        }
+        
+        // Get correlation values
+        function getCorrelationValues() {
+            const params = getURLParams();
+            if (params.corrXYA !== undefined && params.corrXYB !== undefined) {
+                return [
+                    params.corrXYA, 
+                    params.corrXYB, 
+                    params.corrXZA, 
+                    params.corrXZB
+                ];
+            }
+            
+            // If not specified before, use fixed values for static display
+            return [0.8, 0.4, 0.15, 0.15]; 
+        }
+        
+        // Initialize visualizations
+        function initializeVisualizations() {
+            const [corrXYA, corrXYB, corrXZA, corrXZB] = getCorrelationValues();  
+            // Generate data
+            const dataA = generateCorrelatedDataWithSize(pointCount, corrXYA, corrXZA);
+            const dataB = generateCorrelatedDataWithSize(pointCount, corrXYB, corrXZB);
+            // Create visualizations
+            createBubblePlot("bubble-a", "legend-a", dataA, corrXYA, corrXZA);
+            createBubblePlot("bubble-b", "legend-b", dataB, corrXYB, corrXZB);
+            // Console output for debugging
+            console.log(`X-Y Correlation A: ${corrXYA.toFixed(2)}, X-Y Correlation B: ${corrXYB.toFixed(2)}`);
+            console.log(`X-Z Correlation A: ${corrXZA.toFixed(2)}, X-Z Correlation B: ${corrXZB.toFixed(2)}`);
+        }
+        
+        // Initialize on load
+        initializeVisualizations();
+    </script>
+</body>
+</html>

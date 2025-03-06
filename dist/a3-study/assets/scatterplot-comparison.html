@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Correlation Comparison - Scatterplots (Static)</title>
+    <script src="https://d3js.org/d3.v7.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        .visualization {
+            position: relative;
+            padding: 10px;
+            border-radius: 8px;
+            border: 3px solid transparent;
+        }
+        .vis-label {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .axis-label {
+            font-size: 12px;
+            text-anchor: middle;
+        }
+        .instruction {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        #selection-info {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="instruction">Which visualization (1 or 2) shows a <strong>stronger relationship</strong> between X and Y?</div>
+    
+    <div class="container">
+        <div class="visualization" id="vis-a">
+            <div class="vis-label">Visualization 1</div>
+            <svg id="scatter-a"></svg>
+        </div>
+        
+        <div class="visualization" id="vis-b">
+            <div class="vis-label">Visualization 2</div>
+            <svg id="scatter-b"></svg>
+        </div>
+    </div>
+    
+    <div id="selection-info"></div>
+
+    <script>
+        const width = 400;
+        const height = 400;
+        const padding = 50;
+        const pointCount = 80;
+        
+        // Function to parse URL parameters
+        function getURLParams() {
+            const params = {};
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            if (urlParams.has('corrA')) {
+                params.corrA = parseFloat(urlParams.get('corrA'));
+            }
+            if (urlParams.has('corrB')) {
+                params.corrB = parseFloat(urlParams.get('corrB'));
+            }
+            
+            return params;
+        }
+        
+        // Generate correlated data
+        function generateCorrelatedData(n, correlation) {
+            const result = [];
+            const mean = 0.5;
+            const stdDev = 0.15;
+            
+            for (let i = 0; i < n; i++) {
+                const x = Math.random();
+                let y = mean + correlation * (x - mean) + 
+                      Math.sqrt(1 - correlation * correlation) * stdDev * (Math.random() * 2 - 1);
+                y = Math.max(0, Math.min(1, y));
+                
+                result.push({x, y});
+            }
+            
+            return result;
+        }
+        
+        // Create a scatterplot from data
+        function createScatterplot(svgId, data, correlation) {
+            const svg = d3.select(`#${svgId}`)
+                .attr("width", width)
+                .attr("height", height);
+
+            svg.selectAll("*").remove();
+            const xScale = d3.scaleLinear()
+                .domain([0, 1])
+                .range([padding, width - padding])
+                .nice();
+                
+            const yScale = d3.scaleLinear()
+                .domain([0, 1])
+                .range([height - padding, padding])
+                .nice();
+                
+            const xAxis = d3.axisBottom(xScale);
+            const yAxis = d3.axisLeft(yScale);
+            
+            svg.append("g")
+                .attr("transform", `translate(0, ${height - padding})`)
+                .call(xAxis);
+                
+            svg.append("g")
+                .attr("transform", `translate(${padding}, 0)`)
+                .call(yAxis);
+                
+            svg.append("text")
+                .attr("class", "axis-label")
+                .attr("x", width / 2)
+                .attr("y", height - 10)
+                .text("Variable X");
+                
+            svg.append("text")
+                .attr("class", "axis-label")
+                .attr("transform", "rotate(-90)")
+                .attr("x", -height / 2)
+                .attr("y", 15)
+                .text("Variable Y");
+
+            svg.selectAll("circle")
+                .data(data)
+                .enter()
+                .append("circle")
+                .attr("cx", d => xScale(d.x))
+                .attr("cy", d => yScale(d.y))
+                .attr("r", 5)
+                .attr("fill", "#4682b4")
+                .attr("opacity", 0.7);
+                
+            svg.attr("data-correlation", correlation);
+        }
+        
+        // Get correlation values
+        function getCorrelationValues() {
+            const params = getURLParams();
+            if (params.corrA !== undefined && params.corrB !== undefined) {
+                return [params.corrA, params.corrB];
+            }
+            
+            // If none in URL use fixed values for static display
+            return [0.8, 0.4]; 
+        }
+        
+        // Initialize visualizations
+        function initializeVisualizations() {
+            // Get correlation values
+            const [corrA, corrB] = getCorrelationValues();
+            // Generate data
+            const dataA = generateCorrelatedData(pointCount, corrA);
+            const dataB = generateCorrelatedData(pointCount, corrB);
+            // Create visualizations
+            createScatterplot("scatter-a", dataA, corrA);
+            createScatterplot("scatter-b", dataB, corrB);
+            // Console output for debugging
+            console.log(`Correlation A: ${corrA.toFixed(2)}, Correlation B: ${corrB.toFixed(2)}`);
+        }
+        // Initialize on load
+        initializeVisualizations();
+    </script>
+</body>
+</html>
